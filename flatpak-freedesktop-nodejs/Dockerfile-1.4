@@ -1,0 +1,8 @@
+from waltervargas/flatpak-freedesktop:1.4
+LABEL maintainer "contact@walter.bio"
+
+RUN DEBIAN_FRONTEND=noninteractive apt-get -y update && apt-get -y install curl && rm -rf /var/lib/apt/lists/*
+RUN curl -sL https://deb.nodesource.com/setup_4.x | bash -
+RUN DEBIAN_FRONTEND=noninteractive apt-get -y update && apt-get -y install nodejs && rm -rf /var/lib/apt/lists/*
+RUN npm i -g npm@3
+
